@@ -3,15 +3,19 @@ using DataStructures;
 namespace DataStructuresTests;
 
 [TestFixture]
-public class ListTests
+public class EmptyListTests
 {
+    private DgList<string> newList;
+    
+    [SetUp]
+    public void Setup()
+    {
+        newList = new DgList<string>();
+    }
+    
     [Test]
     public void EmptyList_WhenCreated_ShouldHaveLength0()
     {
-        //Arrange
-        var newList = new DgList<string>();
-        
-        // Act
         var newListLength = newList.Length();
         
         Assert.AreEqual(0, newListLength);
@@ -20,10 +24,6 @@ public class ListTests
     [Test]
     public void EmptyList_WhenCreated_ShouldBeEmpty()
     {
-        //Arrange
-        var newList = new DgList<string>();
-        
-        // Act
         var isEmpty = newList.IsEmpty();
         
         Assert.AreEqual(true, isEmpty);
@@ -32,11 +32,7 @@ public class ListTests
     [Test]
     public void EmptyList_WhenCreated_HasInitialCapacity0()
     {
-        //Arrange
-        var newList = new DgList<string>();
-        
-        // Act
-        var capacity = newList.Capacity();
+        var capacity = newList.Capacity;
         
         Assert.AreEqual(0, capacity);
     }
