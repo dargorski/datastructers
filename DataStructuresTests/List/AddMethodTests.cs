@@ -55,4 +55,31 @@ public class AddMethodTests
         
         Assert.AreEqual(false, dgList.IsEmpty());
     }
+    
+    [TestCase(-1, 0)]
+    [TestCase(1, 0)]
+    [TestCase(-1, 10)]
+    [TestCase(11, 10)]
+    public void InsertMethod_WithInvalidIndex_ThrowsIndexOutOfRangeException(int index, int numberOfItems)
+    {
+        ListTestsHelper.FillListWithRandomIntValues(dgList, numberOfItems);
+        Assert.Throws<IndexOutOfRangeException>(() => dgList.Insert(2, index));
+    }
+    
+    [Test]
+    public void InsertMethod_WithIndex_InsertsValueCorrectly()
+    {
+        ListTestsHelper.FillListWithRandomIntValues(dgList, 33);
+        var rand = new Random();
+        for (var i = 0; i < 10; i++)
+        {
+            var valueToInsert = rand.Next(0, 100);
+            var currentLength = dgList.Length();
+            var index = rand.Next(0, currentLength + 1);
+            dgList.Insert(valueToInsert, index);
+            
+            Assert.AreEqual(valueToInsert, dgList.At(index));
+            Assert.AreEqual(currentLength + 1, dgList.Length());
+        }
+    }
 }

@@ -18,19 +18,35 @@ public class DgList<T>
     {
         if (_size == 0)
         {
-            _items = new T[_initialCapacity];
-            Capacity = _initialCapacity;
-            _items[_size++] = item;
+            InitializeArray(item);
         }
-
-        else if (_size == _items.Length)
+        else 
         {
             EnsureCapacity(_size + 1);
             _items[_size++] = item;
         }
+    }
+
+    public void Insert(T item, int index)
+    {
+        if (index < 0 || index > _size)
+        {
+            throw new IndexOutOfRangeException();
+        }
+
+        if (_size == 0)
+        {
+            InitializeArray(item);
+        } 
         else
         {
-            _items[_size++] = item;
+            EnsureCapacity(_size + 1);
+
+            if (index < _size)
+                Array.Copy(_items, index, _items, index + 1, _size - index);
+
+            _items[index] = item;
+            _size++;
         }
     }
 
@@ -110,6 +126,13 @@ public class DgList<T>
     public bool IsEmpty()
     {
         return _size == 0;
+    }
+    
+    private void InitializeArray(T item)
+    {
+        _items = new T[_initialCapacity];
+        Capacity = _initialCapacity;
+        _items[_size++] = item;
     }
     
     private void EnsureCapacity(int min)

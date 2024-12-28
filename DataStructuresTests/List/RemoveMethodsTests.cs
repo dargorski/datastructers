@@ -30,6 +30,8 @@ public class RemoveMethodsTests
             Assert.AreEqual(itemToRemove, removedItem);
         
         }
+        
+        Assert.AreEqual(true, _dgList.IsEmpty());
     }
 
     [TestCase(0,0)]
@@ -56,5 +58,7 @@ public class RemoveMethodsTests
             
             Assert.AreEqual(valueToRemove, removedValue);
         }
+        
+        Assert.AreEqual(true, _dgList.IsEmpty());
     }
 }
