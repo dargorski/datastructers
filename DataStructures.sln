@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStructures\DataStructures.csproj", "{ACC6373F-A368-4DF1-807A-1E93423C0A61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructuresTests", "DataStructuresTests\DataStructuresTests.csproj", "{5F59300D-9080-4F73-99F8-623DA0EB7B95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACC6373F-A368-4DF1-807A-1E93423C0A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACC6373F-A368-4DF1-807A-1E93423C0A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACC6373F-A368-4DF1-807A-1E93423C0A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACC6373F-A368-4DF1-807A-1E93423C0A61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F59300D-9080-4F73-99F8-623DA0EB7B95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F59300D-9080-4F73-99F8-623DA0EB7B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F59300D-9080-4F73-99F8-623DA0EB7B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F59300D-9080-4F73-99F8-623DA0EB7B95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
